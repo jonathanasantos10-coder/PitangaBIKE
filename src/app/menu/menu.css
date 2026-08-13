@@ -1,0 +1,51 @@
+#cabecalho,
+#logo,
+#menu-ul {
+    display: flex;
+    align-items: center;
+}
+
+#logo,
+#menu-ul {
+    height:100%;
+    justify-content: center;
+}
+
+#cabecalho {
+    width: 1000px;
+    
+    margin: 20px auto;
+
+    justify-content: space-between;
+}
+
+#logo {
+    width: 180px;
+}
+
+#menu-ul {
+    width: 790px;
+    
+    list-style: none;
+    justify-content: right;
+}
+
+.lnk-menu{
+    text-decoration: none;
+    padding: 0px 10px;
+    font-size: 16px;
+
+    transition:  0.5s ease;
+}
+
+.lnk-menu:hover{
+    opacity: 0.5;
+}
+
+#titulo-logo{
+    text-transform: uppercase;
+    border: 1px solid black
+    padding: 5px;
+    margin: 0px 4px;
+    letter-spacing: 5px;
+}
