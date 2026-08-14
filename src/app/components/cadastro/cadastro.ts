@@ -39,7 +39,7 @@ export class Cadastro {
     this.atletaService.push(atletaP)
   }
 
-
+// commit push
 
 
 }
