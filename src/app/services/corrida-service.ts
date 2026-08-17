@@ -16,6 +16,7 @@ export class CorridaService {
 
 
     list(){
+        console.table(this.corridas)
         return this.corridas
     }
 

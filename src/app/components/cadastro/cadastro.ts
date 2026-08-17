@@ -37,6 +37,7 @@ export class Cadastro {
     atletaP.cidade = this.cidade;
     this.exibeDados();
     this.limpar();
+    this.atletaService.list();
     this.atletaService.push(atletaP);
   }
 

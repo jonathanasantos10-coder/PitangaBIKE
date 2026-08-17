@@ -5,14 +5,14 @@
     <div class="campo">
       <label for="descricao">Descrição da corrida</label>
 
-      <textarea
+      <input
+        type="text"
         id="descricao"
         name="descricao"
         rows="5"
         [(ngModel)]="descricao"
         placeholder="Ex: Primeira corrida de ataque de tempo no Morro do Urubu, prêmio, idade mínima, etc."
-      >
-      </textarea>
+      />
     </div>
 
     <div class="campo">
@@ -47,7 +47,6 @@
 
     <div id="btns">
       <button type="submit" id="btnAdd">Cadastrar Corrida</button>
-
       <button type="reset" id="btnLimpa">Limpar Dados</button>
     </div>
   </form>

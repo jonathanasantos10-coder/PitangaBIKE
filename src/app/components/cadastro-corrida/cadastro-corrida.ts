@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import { CorridaService } from '../../services/corrida-service';
 import { corridaM } from '../../Models/corridaModel';
 
@@ -9,26 +9,25 @@ import { corridaM } from '../../Models/corridaModel';
   templateUrl: './cadastro-corrida.html',
   styleUrl: './cadastro-corrida.css',
 })
-
 export class CadastroCorrida {
-  descricao = ''
-  data = ''
-  distancia = ''
+  descricao = '';
+  data = '';
+  distancia = '';
 
-  constructor(private corridaService: CorridaService) { }
+  constructor(private corridaService: CorridaService) {}
 
-  listaTeste(){
-    console.log( this.descricao, this.data, this.distancia)
+  listaTeste() {
+    console.log(this.descricao, this.data, this.distancia);
   }
 
-  saveCorrida(){
-    const corridaP = new corridaM()
+  saveCorrida() {
+    const corridaP = new corridaM();
 
-    corridaP.descricao = this.descricao
-    corridaP.data = this.data
-    corridaP.distancia = this.distancia
-
-    this.corridaService.push(corridaP)
+    corridaP.descricao = this.descricao;
+    corridaP.data = this.data;
+    corridaP.distancia = this.distancia;
+    this.listaTeste();
+    this.corridaService.list();
+    this.corridaService.push(corridaP);
   }
-
 }
