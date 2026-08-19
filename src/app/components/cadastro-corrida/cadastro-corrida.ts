@@ -32,7 +32,13 @@ export class CadastroCorrida {
           console.log("aqui o erro o", msgErro)
         }
       })
-    
+      this.limpaForm()
     // tá printando uma classe vazia mas na api tá tudo certo, vitória da classe operária porra!!!!
+  }
+
+  limpaForm(){
+    this.descricao = ''
+    this.distancia = ''
+    this.data = ''
   }
 }

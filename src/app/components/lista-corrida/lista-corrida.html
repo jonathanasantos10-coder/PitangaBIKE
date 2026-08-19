@@ -1,0 +1,31 @@
+<div class="container-corridas">
+    <h2>Corridas Disponíveis</h2>
+
+    <div class="tabela-header">
+        <div class="col-descricao">Descrição</div>
+        <div class="col-data">Data</div>
+        <div class="col-distancia">Distâncias</div>
+        <div class="col-acao">Ação</div>
+    </div>
+
+    @for (elem of listaCorridas(); track elem.id) {
+    <div class="corrida-item">
+        <div class="col-descricao">
+            {{elem.descricao}}
+        </div>
+        <div class="col-data">
+            {{elem.data}}
+        </div>
+        <div class="col-distancia">
+            {{elem.distancia}}
+        </div>
+        <div class="col-acao">
+            <button class="btn-inscrever"  /* (click)="inscrever(corrida)"*/ >Inscrever-se</button>
+        </div>
+    </div>
+    }@empty{
+    <div class="sem-dados">
+        Nenhuma corrida disponível
+    </div>
+    }
+</div>

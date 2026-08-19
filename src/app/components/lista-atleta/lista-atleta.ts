@@ -33,7 +33,7 @@ export class ListaAtleta {
         this.listaAtletas.set([...dados].sort((a, b) => a.nome.localeCompare(b.nome)));
       },
       error: (msgErro) => {
-        console.log('Erro ao cadastrar  o atleta ', msgErro);
+        console.log('Erro ao listar os atletas', msgErro);
       },
     });
   }
