@@ -1,1 +1,132 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --cor-primaria: #22c55e;     
+  --cor-primaria-escura: #16a34a;
+  --cor-primaria-clara: #dcfce7;
+  
+  /* Cores Secundárias */
+  --cor-secundaria: #3b82f6;    
+  --cor-secundaria-escura: #1d4ed8;
+  
+  /* Cores Neutras */
+  --cor-branco: #ffffff;
+  --cor-preto: #000000;
+  --cor-cinza-claro: #f3f4f6;
+  --cor-cinza-medio: #d1d5db;
+  --cor-cinza-escuro: #374151;
+  --cor-cinza-texto: #6b7280;
+  
+  /* Cores de Estado */
+  --cor-sucesso: #10b981;
+  --cor-aviso: #f59e0b;
+  --cor-erro: #ef4444;
+  --cor-info: #3b82f6;
+  
+  /* Sombras */
+  --sombra-leve: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --sombra-media: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --sombra-pesada: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+html {
+  scroll-behavior: smooth;
+}
+ 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--cor-cinza-escuro);
+  background-color: var(--cor-cinza-claro);
+}
+
+@media (max-width: 768px) {
+  #home {
+    flex-direction: column;
+    gap: 10px;
+  }
+ 
+  #home p {
+    font-size: 18px;
+  }
+ 
+  #titulo-home {
+    font-size: 36px;
+  }
+ 
+  #div-form,
+  #div-lista {
+    margin: 20px;
+    padding: 25px;
+  }
+ 
+  #div-form h2,
+  #div-lista h2 {
+    font-size: 22px;
+  }
+ 
+  #btns {
+    flex-direction: column;
+  }
+ 
+  #btnAdd,
+  #btnLimpa {
+    width: 100%;
+  }
+ 
+  .item-atletas {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+ 
+  .links-lista {
+    width: 100%;
+    justify-content: flex-start;
+  }
+ 
+  .lnk-editar,
+  .lnk-excluir {
+    flex: 1;
+    text-align: center;
+  }
+ 
+  .dados-atleta {
+    font-size: 14px;
+  }
+}
+ 
+@media (max-width: 480px) {
+  #titulo-home {
+    font-size: 28px;
+  }
+ 
+  #home p {
+    font-size: 16px;
+  }
+ 
+  #div-form,
+  #div-lista {
+    margin: 15px;
+    padding: 20px;
+  }
+ 
+  #formulario {
+    gap: 15px;
+  }
+ 
+  .links-lista {
+    gap: 10px;
+  }
+ 
+  .lnk-editar,
+  .lnk-excluir {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

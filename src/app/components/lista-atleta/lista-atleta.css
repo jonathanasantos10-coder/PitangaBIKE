@@ -1,45 +1,105 @@
-#div-lista{
-    width: 1000px;
-    padding: 25px;
-    margin: 20px auto;
-    color: var( --cor-secundaria);
+#div-lista {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: var(--cor-branco);
+  border-radius: 12px;
+  box-shadow: var(--sombra-media);
 }
-
-h2{
-    margin: 30px 0px;
+ 
+#div-lista h2 {
+  color: var(--cor-primaria-escura);
+  margin-bottom: 30px;
+  font-size: 28px;
+  text-align: center;
+  border-bottom: 3px solid var(--cor-primaria);
+  padding-bottom: 15px;
 }
-
-.item-atletas{
-    margin: 20px 0px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+ 
+#lista-atletas {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
-
-/*FORMATAÇÃO DOS BOTÕES*/
-.lnk-editar, .lnk-excluir {
-    text-decoration: none;
-    text-transform: uppercase;
-    width: 100px;
-    text-align: center;
-    margin: 8px 0px;
-    transition: opacity 0.5s ease;
-    letter-spacing: 3px;
-    cursor: pointer;
+ 
+.item-atletas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--cor-cinza-claro);
+  border-left: 4px solid var(--cor-primaria);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: var(--sombra-leve);
 }
-
-a:hover {
-    opacity: 0.5;
+ 
+.item-atletas:hover {
+  background-color: var(--cor-primaria-clara);
+  box-shadow: var(--sombra-media);
+  transform: translateX(5px);
 }
-
-.lnk-editar {
-    margin-right: 10px;
-    color: var(  --cor-primaria);
+ 
+.dados-atleta {
+  flex: 1;
+  color: var(--cor-cinza-escuro);
+  font-weight: 500;
+  word-break: break-word;
+  font-size: 15px;
 }
-
+ 
+.links-lista {
+  display: flex;
+  gap: 15px;
+  white-space: nowrap;
+}
+ 
+.lnk-editar,
 .lnk-excluir {
-    margin-left: 10px;
-    color: var( --cor-botao2);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-decoration: none;
+  display: inline-block;
 }
-
+ 
+.lnk-editar {
+  color: var(--cor-branco);
+  background-color: var(--cor-info);
+}
+ 
+.lnk-editar:hover {
+  background-color: var(--cor-secundaria-escura);
+  box-shadow: var(--sombra-media);
+  transform: translateY(-2px);
+}
+ 
+.lnk-excluir {
+  color: var(--cor-branco);
+  background-color: var(--cor-erro);
+}
+ 
+.lnk-excluir:hover {
+  background-color: #dc2626;
+  box-shadow: var(--sombra-media);
+  transform: translateY(-2px);
+}
+ 
+/* Mensagem vazia */
+.div-item-pessoa {
+  padding: 40px;
+  text-align: center;
+  color: var(--cor-cinza-texto);
+  font-size: 18px;
+  font-weight: 500;
+  background-color: var(--cor-primaria-clara);
+  border-radius: 8px;
+  border: 2px dashed var(--cor-primaria);
+}
+ 

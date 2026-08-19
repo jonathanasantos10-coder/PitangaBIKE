@@ -1,33 +1,21 @@
 import { Injectable } from '@angular/core';
 import { corridaM } from '../Models/corridaModel';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
 })
 
 export class CorridaService {
-    
-    private corridas: corridaM[] = []
+     constructor(private http: HttpClient) { }
+   
 
-    push(corrida: corridaM){
-        corrida.idCorrida = this.corridas.length + 1 // maravilhoso seja este método não ortodoxo introduzido a vosso reino
-        this.corridas.push(corrida)
+    adicionarCorrida(corrida: corridaM): Observable<corridaM> {
+    const urlApi = `https://6a8387bacb486d243403bb3b.mockapi.io/apiPitanga/corridaM`
+    console.table(corridaM)
+    return this.http.post<corridaM>(urlApi, corrida)
     }
 
 
-    list(){
-        console.table(this.corridas)
-        return this.corridas
-    }
-
-     
-    /* private localizarCorrida( idCorrida: number){
-        return this.corridas.findIndex(elem => elem.id === idCorrida)
-    } // apesar dessa função ser inútil pro futuro, ela ainda pode ser reutilizada em outras funções aqui no service se o professor quiser botar uma maneira de editar a corrida.
-    */
-
-    removerCorrida (pos: number){
-        this.corridas.splice(1, pos)
-    }
-
-}
+  }
