@@ -69,7 +69,7 @@
   outline: none;
   border-color: var(--cor-primaria);
   box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
-  background-color: var(--cor-primaria-clara);
+  background-color: var(--cor-primaria-escura);
 }
  
 #formulario input::placeholder {
