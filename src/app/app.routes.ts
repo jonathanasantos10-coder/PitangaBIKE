@@ -40,4 +40,8 @@ export const routes: Routes = [
     path: 'inscricao',
     component: Inscricao,
   },
+    {
+    path: 'editaCorrida/:id',
+    component: CadastroCorrida,
+  },
 ];

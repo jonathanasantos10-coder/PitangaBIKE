@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CorridaService } from '../../services/corrida-service';
 import { corridaM } from '../../Models/corridaModel';
-
+import { ActivatedRoute } from '@angular/router';
+import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-cadastro-corrida',
   imports: [FormsModule],
@@ -15,30 +16,58 @@ export class CadastroCorrida {
   data = '';
   distancia = '';
 
-  constructor(private corridaService: CorridaService) {}
+  constructor(
+    private corridaService: CorridaService,
+    private route: ActivatedRoute,
+    private cdr: ChangeDetectorRef,
+  ) {}
+
+  idCorrida = 0
+  edit = 0
+  ngOnInit(){
+    this.idCorrida = Number(this.route.snapshot.paramMap.get('id'))
+
+    if(this.idCorrida > 0){
+      this.edit = 1
+    }
+  }
 
   saveCorrida() {
-    const CorridaO = new corridaM()
+    const CorridaO = new corridaM();
     CorridaO.descricao = this.descricao;
     CorridaO.data = this.data;
     CorridaO.distancia = this.distancia;
 
-    this.corridaService.adicionarCorrida(CorridaO)
-      .subscribe({
-        next: (resposta) =>{
-          console.log(resposta)
-        },
-        error: (msgErro) =>{
-          console.log("aqui o erro o", msgErro)
-        }
-      })
-      this.limpaForm()
+    this.corridaService.adicionarCorrida(CorridaO).subscribe({
+      next: (resposta) => {
+        console.log(resposta);
+      },
+      error: (msgErro) => {
+        console.log('aqui o erro o', msgErro);
+      },
+    });
+    this.limpaForm();
     // tá printando uma classe vazia mas na api tá tudo certo, vitória da classe operária porra!!!!
   }
 
-  limpaForm(){
-    this.descricao = ''
-    this.distancia = ''
-    this.data = ''
+  limpaForm() {
+    this.descricao = '';
+    this.distancia = '';
+    this.data = '';
+  }
+
+  carregaDados(idCorrida: number) {
+    this.corridaService.listarCorridas(idCorrida).subscribe({
+      next: (dadosCorrida) => {
+        this.descricao = dadosCorrida.descricao;
+        this.distancia = dadosCorrida.distancia;
+        this.data = dadosCorrida.data;
+
+        this.cdr.detectChanges();
+      },
+      error: (msgerro) => {
+        return msgerro;
+      },
+    });
   }
 }
