@@ -51,4 +51,8 @@ export class ListaCorrida {
   levaDados(corrida: corridaM) {
     this.router.navigate(['/editaCorrida', corrida.id]);
   }
+
+  inscreveDados(corrida: corridaM) {
+    this.router.navigate(['/inscreve', corrida.id]);
+  }
 }

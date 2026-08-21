@@ -35,15 +35,7 @@ export class CorridaService {
   alterarCorrida(corrida: corridaM) {
     const urlAPi = `https://6a8387bacb486d243403bb3b.mockapi.io/apiPitanga/corridaM/${corrida.id}`
 
-    this.http.put<corridaM>(urlAPi, corrida)
-      .subscribe({
-        next: (repostaAPI) => {
-          return repostaAPI
-        },
-        error: (msgErro) => {
-          return msgErro
-        }
-      })
+   return this.http.put<corridaM>(urlAPi, corrida)
   }
 
 

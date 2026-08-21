@@ -4,6 +4,7 @@ import { CorridaService } from '../../services/corrida-service';
 import { corridaM } from '../../Models/corridaModel';
 import { ActivatedRoute } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
+import { error } from 'console';
 @Component({
   selector: 'app-cadastro-corrida',
   imports: [FormsModule],
@@ -22,13 +23,14 @@ export class CadastroCorrida {
     private cdr: ChangeDetectorRef,
   ) {}
 
-  idCorrida = 0
-  edit = 0
-  ngOnInit(){
-    this.idCorrida = Number(this.route.snapshot.paramMap.get('id'))
+  idCorrida = 0;
+  edit = false;
+  ngOnInit() {
+    this.idCorrida = Number(this.route.snapshot.paramMap.get('id'));
 
-    if(this.idCorrida > 0){
-      this.edit = 1
+    if (this.idCorrida > 0) {
+      this.edit = true;
+      this.carregaDados(this.idCorrida);
     }
   }
 
@@ -38,14 +40,28 @@ export class CadastroCorrida {
     CorridaO.data = this.data;
     CorridaO.distancia = this.distancia;
 
-    this.corridaService.adicionarCorrida(CorridaO).subscribe({
-      next: (resposta) => {
-        console.log(resposta);
-      },
-      error: (msgErro) => {
-        console.log('aqui o erro o', msgErro);
-      },
-    });
+    if (this.edit) {
+      CorridaO.id = this.idCorrida;
+      this.corridaService.alterarCorrida(CorridaO)
+        .subscribe({
+          next: (respostaAPI) => {
+            return respostaAPI
+          },
+          error: (msgErro) => {
+            return msgErro
+          }
+        })
+    } else {
+      this.corridaService.adicionarCorrida(CorridaO).subscribe({
+        next: (resposta) => {
+          console.log(resposta);
+        },
+        error: (msgErro) => {
+          console.log('aqui o erro o', msgErro);
+        },
+      });
+    }
+
     this.limpaForm();
     // tá printando uma classe vazia mas na api tá tudo certo, vitória da classe operária porra!!!!
   }

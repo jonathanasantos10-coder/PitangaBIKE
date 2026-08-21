@@ -1,0 +1,76 @@
+<div id="div-inscricao">
+  <h2>Inscrição na Corrida</h2>
+
+  <form id="formulario-inscricao" (submit)="salvarInscricao()">
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="atleta">Atleta Cadastrado</label>
+        <select 
+          name="atleta" 
+          id="atleta" 
+          [(ngModel)]="idAtleta"
+          required
+        >
+          <option value="">Selecione o atleta</option>
+          @for (elem of listaAtletas(); track elem.id) {
+            <option value="{{ elem.id }}">{{ elem.nome }}</option>
+          }@empty{
+            <option> Nenhum atleta disponível. </option>"
+          }
+        </select>
+      </div>
+
+      
+    </div>
+
+    <div class="form-group full-width">
+      <label for="corrida">Corrida Escolhida</label>
+      <select 
+        name="corrida" 
+        id="corrida" 
+        [(ngModel)]="idCorrida"
+        required
+      >
+        <option value="">Selecione a corrida</option>
+        @for (elem of listaCorridas(); track elem.id) {
+          <option value="{{ elem.id }}">
+            {{ elem.descricao }} - {{ elem.data }} - {{elem.distancia}} KM
+          </option>
+        }
+      </select>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="tamanho-camiseta">Tamanho da Camiseta (Kit)</label>
+        <select 
+          name="tamanho-camiseta" 
+          id="tamanho-camiseta" 
+          [(ngModel)]="tamanhoCamiseta"
+          required
+        >
+          <option value="">Selecione</option>
+          <option value="P">P</option>
+          <option value="M">M</option>
+          <option value="G">G</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="form-group full-width info-preco">
+      <label>Valor da Inscrição:</label>
+      <span class="preco">R$ 5.00 </span>
+    </div>
+
+    <div id="btns">
+      <button 
+        type="submit" 
+        id="btnFinalizar"
+      >
+      Inscrever-se
+      </button>
+    </div>
+  </form>
+</div>
