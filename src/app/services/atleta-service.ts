@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 
 export class AtletaService {
-  constructor(private http: HttpClient) { }
-   
+  constructor(
+    private http: HttpClient) { }
 
     adicionarAtleta(atleta: AtletaM): Observable<AtletaM> {
     const urlApi = `https://6a8387bacb486d243403bb3b.mockapi.io/apiPitanga/AtletaM`
@@ -42,7 +42,15 @@ export class AtletaService {
     return this.http.delete<AtletaM>(urlApi)
   }
 
+   // FUNÇÃO PARA CALCULAR A IDADE
+  calcularIdade(bday: string){
+    const anoNascimento = new Date(bday).getFullYear();
+    const anoAtual = new Date().getFullYear();
+  
+    return anoAtual - anoNascimento;
   }
+}
+  
 
   
 

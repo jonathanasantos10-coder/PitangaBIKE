@@ -8,4 +8,5 @@ export class AtletaM{
     bairro: string = ''
     uf: string = ''
     cidade: string = ''
+    bday : string = ''
 }

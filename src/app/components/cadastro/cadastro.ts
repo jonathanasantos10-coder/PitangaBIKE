@@ -20,6 +20,7 @@ export class Cadastro {
   bairro = ''
   uf = ''
   cidade = ''
+  bday = ''
 
   editar = false 
   idAtleta = 0
@@ -52,6 +53,7 @@ export class Cadastro {
         this.bairro = objAtleta.bairro
         this.cidade = objAtleta.cidade
         this.uf = objAtleta.uf
+        this.bday = objAtleta.bday
 
         this.cdr.detectChanges()
     }, error: (msgErro) => {
@@ -70,6 +72,7 @@ export class Cadastro {
     AtletaP.bairro = this.bairro
     AtletaP.cidade = this.cidade
     AtletaP.uf = this.uf
+    AtletaP.bday = this.bday
 
     if (!this.editar) {
       this.atletaService.adicionarAtleta(AtletaP)
@@ -123,6 +126,7 @@ export class Cadastro {
     this.bairro = ''
     this.cidade = ''
     this.uf = ''
+    this.bday = ''
   }
 
 

@@ -27,12 +27,23 @@
         />
       </div>
       <div class="form-group">
+        <label for="bday">Data de nascimento</label>
+        <input
+          type="date"
+          name="bday"
+          id="bday"
+          placeholder="07/07/2006"
+          maxlength="11"
+          [(ngModel)]="bday"
+        />
+      </div>
+      <div class="form-group full-width">
         <label for="sexo">Sexo</label>
         <select name="sexo" id="sexo" [(ngModel)]="sexo">
           <option value="">Selecione</option>
           <option value="masculino">Masculino</option>
           <option value="feminino">Feminino</option>
-          <option value="outro">Prefiro não informar</option>
+          <option value="Prefiro não informar">Prefiro não informar</option>
         </select>
       </div>
     </div>

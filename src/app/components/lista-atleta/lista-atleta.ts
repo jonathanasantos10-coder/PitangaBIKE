@@ -23,6 +23,7 @@ export class ListaAtleta {
   //EXECUTAR INSTRUÇÕES AO CARREGAR CRIAR O COMPONENTE
   ngOnInit() {
     this.listarAtletas();
+    
   }
 
   //LISTAR OS ATLETAS
@@ -58,5 +59,9 @@ export class ListaAtleta {
   //ALTERAR DADOS
   buscarPessoa(id: AtletaM) {
     this.router.navigate(['/cadastro', id]);
+  }
+
+  calcularIdade(bday: string): number {
+    return this.http.calcularIdade(bday);
   }
 }
