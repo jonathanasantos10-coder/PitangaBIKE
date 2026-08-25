@@ -4,7 +4,7 @@ import { CorridaService } from '../../services/corrida-service';
 import { corridaM } from '../../Models/corridaModel';
 import { ActivatedRoute } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
-import { error } from 'console';
+
 @Component({
   selector: 'app-cadastro-corrida',
   imports: [FormsModule],
