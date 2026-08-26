@@ -11,7 +11,7 @@ export class CorridaService {
 
   adicionarCorrida(corrida: corridaM): Observable<corridaM> {
     const urlApi = `https://6a8387bacb486d243403bb3b.mockapi.io/apiPitanga/corridaM`;
-    console.table(corridaM);
+  
     return this.http.post<corridaM>(urlApi, corrida);
   }
 
