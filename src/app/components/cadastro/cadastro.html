@@ -34,7 +34,7 @@
           id="bday"
           placeholder="07/07/2006"
           maxlength="11"
-          [(ngModel)]="bday"
+          [(ngModel)]="data_nascimento"
         />
       </div>
       <div class="form-group full-width">
@@ -67,10 +67,35 @@
           name="rua"
           id="rua"
           placeholder="Rua Vila e Dão de Junco"
-          [(ngModel)]="rua"
+          [(ngModel)]="rua_logradouro"
         />
       </div>
     </div>
+
+     <div class="form-row">
+      <div class="form-group">
+        <label for="altura">Altura</label>
+        <input
+          type="number"
+          name="altura"
+          id="altura"
+          placeholder="1.75"
+          maxlength="4"
+          [(ngModel)]="altura"
+        />
+      </div>
+      <div class="form-group">
+        <label for="peso">Peso</label>
+        <input
+          type="number"
+          name="peso"
+          id="peso"
+          placeholder="75"
+          [(ngModel)]="peso"
+        />
+      </div>
+    </div>
+
 
     <div class="form-row three-columns">
       <div class="form-group">

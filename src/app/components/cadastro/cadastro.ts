@@ -15,12 +15,14 @@ export class Cadastro {
   nome = ''
   cpf = ''
   sexo = ''
-  cep = 0.0
-  rua = ''
+  cep = ''
+  rua_logradouro = ''
   bairro = ''
   uf = ''
   cidade = ''
-  bday = ''
+  data_nascimento = ''
+  altura = 0.0
+  peso = 0.0
 
   editar = false 
   idAtleta = 0
@@ -49,11 +51,11 @@ export class Cadastro {
         this.cpf = objAtleta.cpf
         this.sexo = objAtleta.sexo
         this.cep = objAtleta.cep
-        this.rua = objAtleta.rua
+        this.rua_logradouro = objAtleta.rua_logradouro
         this.bairro = objAtleta.bairro
         this.cidade = objAtleta.cidade
         this.uf = objAtleta.uf
-        this.bday = objAtleta.bday
+        this.data_nascimento = objAtleta.data_nascimento
 
         this.cdr.detectChanges()
     }, error: (msgErro) => {
@@ -68,11 +70,13 @@ export class Cadastro {
     AtletaP.cpf = this.cpf
     AtletaP.sexo = this.sexo
     AtletaP.cep = this.cep
-    AtletaP.rua = this.rua
+    AtletaP.rua_logradouro = this.rua_logradouro
     AtletaP.bairro = this.bairro
     AtletaP.cidade = this.cidade
     AtletaP.uf = this.uf
-    AtletaP.bday = this.bday
+    AtletaP.data_nascimento = this.data_nascimento
+    AtletaP.peso = this.peso
+    AtletaP.altura = this.altura
 
     if (!this.editar) {
       this.atletaService.adicionarAtleta(AtletaP)
@@ -121,12 +125,14 @@ export class Cadastro {
     this.nome = ''
     this.cpf = ''
     this.sexo = ''
-    this.cep = 0
-    this.rua = ''
+    this.cep = ''
+    this.rua_logradouro = ''
     this.bairro = ''
     this.cidade = ''
     this.uf = ''
-    this.bday = ''
+    this.data_nascimento = ''
+    this.altura = 0.0
+    this.peso = 0.0
   }
 
 

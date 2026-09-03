@@ -64,4 +64,20 @@ export class ListaAtleta {
   calcularIdade(bday: string): number {
     return this.http.calcularIdade(bday);
   }
+
+   calcularImc(peso: number, altura: number): number {
+    return this.http.calcularImc(peso, altura)
+  }
+
+  ifimc(imc: number): string {
+  if (imc < 18.5) {
+    return ' Abaixo do peso'
+  } else if (imc <= 25.0) {
+    return 'No peso adequado'
+  } else if (imc <= 30.0) {
+    return 'Em sobrepeso'
+  } else (imc <= 35.0) 
+    return 'Obeso'
+  }
 }
+

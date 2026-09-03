@@ -3,10 +3,12 @@ export class AtletaM{
     nome: string = ''
     sexo: string = ''
     cpf: string = ''
-    cep: number = 0.0
-    rua: string = ''
+    cep: string = ''
+    rua_logradouro: string = ''
     bairro: string = ''
     uf: string = ''
     cidade: string = ''
-    bday : string = ''
+    data_nascimento : string = ''
+    altura : number = 0.0
+    peso : number = 0.0
 }
