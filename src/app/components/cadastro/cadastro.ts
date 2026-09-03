@@ -56,7 +56,8 @@ export class Cadastro {
         this.cidade = objAtleta.cidade
         this.uf = objAtleta.uf
         this.data_nascimento = objAtleta.data_nascimento
-
+        this.altura = objAtleta.altura
+        this.peso = objAtleta.peso
         this.cdr.detectChanges()
     }, error: (msgErro) => {
       console.log("Erro ao listar o atleta", msgErro)

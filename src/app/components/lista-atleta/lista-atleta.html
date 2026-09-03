@@ -5,7 +5,7 @@
         @for (elem of listaAtletas(); track elem.id) {
         <div class="item-atletas">
             <span class="dados-atleta">
-                {{elem.id}} - {{elem.nome}} - CPF: {{elem.cpf}} - {{elem.sexo}} - {{elem.cidade}} - {{elem.uf}} - Idade:  {{ calcularIdade(elem.data_nascimento) }} O Atleta está {{ifimc((calcularImc(elem.peso, elem.altura)))}}
+                {{elem.id}} - {{elem.nome}} - CPF: {{elem.cpf}} - {{elem.sexo}} - {{elem.cidade}} - {{elem.uf}} - Idade:  {{ calcularIdade(elem.data_nascimento) }}  IMC: {{ calcularImc(elem.peso, elem.altura).toFixed(2)}} O Atleta está: {{ifimc((calcularImc(elem.peso, elem.altura)))}}
             </span>
             <span class="links-lista">
                 <a class="lnk-editar" (click)="buscarPessoa(elem)"> Editar </a>
