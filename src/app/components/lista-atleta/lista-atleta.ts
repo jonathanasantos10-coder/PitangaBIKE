@@ -70,13 +70,13 @@ export class ListaAtleta {
   }
 
   ifimc(imc: number): string {
-  if (imc < 18.5) {
+  if (imc <= 18.5) {
     return ' Abaixo do peso'
-  } else if (imc <= 25.0) {
+  } else if (imc >= 25.0) {
     return 'No peso adequado'
-  } else if (imc <= 30.0) {
+  } else if (imc >= 30.0) {
     return 'Em sobrepeso'
-  } else (imc <= 35.0) 
+  } else (imc >= 35.0) 
     return 'Obeso'
   }
 }
