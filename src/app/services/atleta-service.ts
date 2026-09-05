@@ -53,9 +53,6 @@ export class AtletaService {
   calcularImc(peso: number, altura: number): number {
   
   return peso / (altura * altura)
-
-    
-
 }
 }
 

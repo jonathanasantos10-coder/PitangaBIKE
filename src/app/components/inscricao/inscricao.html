@@ -33,8 +33,8 @@
         required
       >
         <option value="">Selecione a corrida</option>
-        @for (elem of listaCorridas(); track elem.id) {
-          <option value="{{ elem.id }}">
+        @for (elem of listaCorridas(); track elem.idcorrida) {
+          <option value="{{ elem.idcorrida }}">
             {{ elem.descricao }} - {{ elem.data }} - {{elem.distancia}} KM
           </option>
         }

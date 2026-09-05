@@ -15,7 +15,7 @@ export class CadastroCorrida {
   id = 0;
   descricao = '';
   data = '';
-  distancia = '';
+  distancia = 0
 
   constructor(
     private corridaService: CorridaService,
@@ -38,10 +38,10 @@ export class CadastroCorrida {
     const CorridaO = new corridaM();
     CorridaO.descricao = this.descricao;
     CorridaO.data = this.data;
-    CorridaO.distancia = this.distancia;
-
+   //  CorridaO.distancia = this.distancia; 
+   CorridaO.distancia = Number(this.distancia);
     if (this.edit) {
-      CorridaO.id = this.idCorrida;
+      CorridaO.idcorrida = this.idCorrida;
       this.corridaService.alterarCorrida(CorridaO)
         .subscribe({
           next: (respostaAPI) => {
@@ -68,7 +68,7 @@ export class CadastroCorrida {
 
   limpaForm() {
     this.descricao = '';
-    this.distancia = '';
+    this.distancia = 0;
     this.data = '';
   }
 

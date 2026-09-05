@@ -1,6 +1,6 @@
 export class corridaM{
-  id : number = 0
+  idcorrida : number = 0
   descricao : string = ''
   data : string = ''
-  distancia : string = ''
+  distancia : number = 0
 }

@@ -36,7 +36,7 @@ export class ListaCorrida {
     if (confirm(`Deseja excluir ${corrida.descricao} da lista? `)) {
       this.http.excluirCorrida(corrida).subscribe({
         next: (dados) => {
-          this.listaCorridas.update((elem) => elem.filter((a) => a.id !== corrida.id));
+          this.listaCorridas.update((elem) => elem.filter((a) => a.idcorrida !== corrida.idcorrida));
 
           console.log('Corrida excluída com Sucesso ', dados);
         },
@@ -49,10 +49,10 @@ export class ListaCorrida {
   }
 
   levaDados(corrida: corridaM) {
-    this.router.navigate(['/editaCorrida', corrida.id]);
+    this.router.navigate(['/editaCorrida', corrida.idcorrida]);
   }
 
   inscreveDados(corrida: corridaM) {
-    this.router.navigate(['/inscreve', corrida.id]);
+    this.router.navigate(['/inscreve', corrida.idcorrida]);
   }
 }

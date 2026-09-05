@@ -79,7 +79,7 @@ export class Inscricao {
     
     if (this.trouxe) {
     InscricaoO.idCorrida = this.idCorrida;
-    const urlApi = `https://6a87994270fbbd308f990dc5.mockapi.io/inscricao`;
+    const urlApi = `http://127.0.0.1:8000/inscricao/`;
     this.http.post<any>(urlApi, InscricaoO).subscribe({
       next: (resposta) => {
         console.log('tá no mock lá mano', resposta)
@@ -91,7 +91,7 @@ export class Inscricao {
     });
 
     }else {
-      const urlApi = `https://6a87994270fbbd308f990dc5.mockapi.io/inscricao`;
+      const urlApi = `http://127.0.0.1:8000/inscricao/`;
 
     this.http.post<any>(urlApi, InscricaoO).subscribe({
         next: (resposta) => {
@@ -116,7 +116,7 @@ export class Inscricao {
   trazDados(idCorrida: number){
     this.corridaService.listarCorridas(idCorrida).subscribe({
       next: (dados) => {
-        this.idCorrida = dados.id;
+        this.idCorrida = dados.idcorrida;
 
         this.cdr.detectChanges();
       },

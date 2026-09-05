@@ -10,33 +10,27 @@ export class CorridaService {
   constructor(private http: HttpClient) {}
 
   adicionarCorrida(corrida: corridaM): Observable<corridaM> {
-    const urlApi = `https://6a8387bacb486d243403bb3b.mockapi.io/apiPitanga/corridaM`;
-  
+    const urlApi = `http://127.0.0.1:8000/corrida/`;
     return this.http.post<corridaM>(urlApi, corrida);
   }
 
   listApi(): Observable<corridaM[]> {
-    const urlApi = `https://6a8387bacb486d243403bb3b.mockapi.io/apiPitanga/corridaM`;
+    const urlApi = `http://127.0.0.1:8000/corrida/`;
     return this.http.get<corridaM[]>(urlApi);
   }
 
   listarCorridas(idCorrida: number): Observable<corridaM> {
-    const urlApi = `https://6a8387bacb486d243403bb3b.mockapi.io/apiPitanga/corridaM/${idCorrida}`;
+    const urlApi = `http://127.0.0.1:8000/corrida/${idCorrida}`;
     return this.http.get<corridaM>(urlApi);
   }
 
   excluirCorrida(corrida: corridaM): Observable<corridaM> {
-    const urlApi = `https://6a8387bacb486d243403bb3b.mockapi.io/apiPitanga/corridaM/${corrida.id}`;
-
+    const urlApi = `http://127.0.0.1:8000/corrida/${corrida.idcorrida}`;
     return this.http.delete<corridaM>(urlApi);
   }
 
-  //ALTERAR CORRIDA
   alterarCorrida(corrida: corridaM) {
-    const urlAPi = `https://6a8387bacb486d243403bb3b.mockapi.io/apiPitanga/corridaM/${corrida.id}`
-
-   return this.http.put<corridaM>(urlAPi, corrida)
+    const urlAPi = `http://127.0.0.1:8000/corrida/${corrida.idcorrida}`;
+    return this.http.put<corridaM>(urlAPi, corrida);
   }
-
-
 }
